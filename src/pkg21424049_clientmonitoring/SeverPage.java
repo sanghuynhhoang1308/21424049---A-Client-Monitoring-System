@@ -64,6 +64,11 @@ public class SeverPage extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 255, 51));
         jButton2.setText("Connect");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 0, 0));
         jButton3.setText("Exit");
@@ -132,7 +137,20 @@ public class SeverPage extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+         
+         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         try{
+            this.setVisible(false);
+           // new StartServer().go();
+            new StartServer().setVisible(true);
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
