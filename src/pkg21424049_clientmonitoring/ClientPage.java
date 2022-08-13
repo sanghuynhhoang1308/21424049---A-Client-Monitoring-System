@@ -13,6 +13,9 @@ public class ClientPage extends javax.swing.JFrame {
     /**
      * Creates new form ClientPage
      */
+    public static String ip;
+    public static String name;
+    public static int portNumber;
     public ClientPage() {
         initComponents();
     }
@@ -64,6 +67,11 @@ public class ClientPage extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setText("Connect");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Exit");
@@ -140,6 +148,15 @@ public class ClientPage extends javax.swing.JFrame {
         // TODO add your handling code here:
              System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ClientPage.ip=textIp.getText().trim();
+        ClientPage.name=textName.getText().trim();
+        ClientPage.portNumber=Integer.parseInt(textPort.getText().trim());
+        this.setVisible(false);
+        new StartClient().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
