@@ -4,6 +4,11 @@
  */
 package pkg21424049_clientmonitoring;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
+
 /**
  *
  * @author Huynh Hoang Sang
@@ -18,6 +23,10 @@ public class ClientPage extends javax.swing.JFrame {
     public static int portNumber;
     public ClientPage() {
         initComponents();
+         //this.getContentPane().setBackground(Color.black);
+        UIManager.put("InternalFrame.activeTitleBackground", new ColorUIResource(Color.black ));
+        UIManager.put("InternalFrame.activeTitleForeground", new ColorUIResource(Color.WHITE));
+        UIManager.put("InternalFrame.titleFont", new Font("Dialog", Font.PLAIN, 11));
     }
 
     /**
@@ -188,7 +197,7 @@ public class ClientPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClientPage().setVisible(true);
+                new StartClient().go();
             }
         });
     }
