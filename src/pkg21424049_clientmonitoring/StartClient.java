@@ -7,8 +7,11 @@ package pkg21424049_clientmonitoring;
 import java.awt.Color;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -73,6 +76,14 @@ public class StartClient extends javax.swing.JFrame {
         publicIp="103.204.166.235";
         textMainLabel.setText(ClientPage.name);
         new HandleClient(this).start();
+        
+        
+        
+        
+        
+        
+        
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -257,7 +268,15 @@ public class StartClient extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void msg_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msg_exitActionPerformed
-        
+         if(JOptionPane.showConfirmDialog(null,"Do you want to exit?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE)==0){
+            try {
+                // TODO add your handling code here:
+                dout.writeUTF("Exit");
+            } catch (IOException ex) {
+                Logger.getLogger(StartClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.exit(0);
+        }
 
     }//GEN-LAST:event_msg_exitActionPerformed
 
