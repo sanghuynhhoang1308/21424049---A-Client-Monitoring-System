@@ -23,6 +23,12 @@ public class StartClient extends javax.swing.JFrame {
     /**
      * Creates new form StartClient
      */
+     static Socket s;
+    static DataInputStream din;
+    static DataOutputStream dout;
+    static String ip;
+    static String publicIp;
+
     public StartClient() {
         initComponents();
         this.getContentPane().setBackground(new Color(180, 223, 233));
@@ -38,11 +44,11 @@ public class StartClient extends javax.swing.JFrame {
 
         public void run() {
             try {
-                //s=new Socket(ip,ClientHome.portNumber); 
+                Socket s =new Socket(ip,ClientPage.portNumber); 
                 //InetAddress a=new InetAddress(publicIp);
 
-                s = new Socket(InetAddress.getByName(publicIp), ClientPage.portNumber, InetAddress.getByName(ip), ClientPage.portNumber);
-
+                //Socket s = new Socket(InetAddress.getByName(publicIp), ClientPage.portNumber, InetAddress.getByName(ip), ClientPage.portNumber);
+                
                 din = new DataInputStream(s.getInputStream());
                 dout = new DataOutputStream(s.getOutputStream());
                 dout.writeUTF(ClientPage.name);
@@ -56,19 +62,16 @@ public class StartClient extends javax.swing.JFrame {
                         msg_area.setText(str);
                     }
                 }
+               
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Server is not online, Please Try again", "Error in Connection", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Error in Connection", JOptionPane.ERROR_MESSAGE);
                 c.setVisible(false);
                 new ClientPage().setVisible(true);
+               System.out.println(e.toString());
             }
         }
     }
-    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
-    static String ip;
-    static String publicIp;
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,7 +80,7 @@ public class StartClient extends javax.swing.JFrame {
     public void go() {
         this.setVisible(true);
         ip = ClientPage.ip;
-        publicIp = "103.204.166.235";
+        publicIp ="localhost";
         textMainLabel.setText(ClientPage.name);
         new HandleClient(this).start();
 

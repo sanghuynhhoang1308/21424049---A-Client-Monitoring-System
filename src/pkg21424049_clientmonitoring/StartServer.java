@@ -110,9 +110,9 @@ public class StartServer extends javax.swing.JFrame {
         public void run() {
             String str;
             try {
-                ss = new ServerSocket(StartSystem.portNumber);
+                ServerSocket ss = new ServerSocket(StartSystem.portNumber);
                 while (true) {
-                    s = ss.accept();
+                    Socket s = ss.accept();
                     dtin = new DataInputStream(s.getInputStream());
                     dtout = new DataOutputStream(s.getOutputStream());
                     str = dtin.readUTF();
