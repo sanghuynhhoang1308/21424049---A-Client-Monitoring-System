@@ -146,7 +146,7 @@ public class SeverPage extends javax.swing.JFrame {
          try{
             this.setVisible(false);
            // new StartServer().go();
-            new StartServer().setVisible(true);
+            new StartServer().go();
         }catch(Exception e){
             
         }
