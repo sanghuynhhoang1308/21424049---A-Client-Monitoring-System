@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Properties;
 import javax.mail.Message;
@@ -34,6 +35,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class StartServer extends javax.swing.JFrame {
 
@@ -44,6 +47,9 @@ public class StartServer extends javax.swing.JFrame {
     Socket s;
     DataOutputStream dtout;
     DataInputStream dtin;
+    List<String> listAction;
+    private final String[] columnNames = new String[]{
+        "STT", "IP", "Time", "Action"};
 
     public StartServer() {
         initComponents();
@@ -67,9 +73,11 @@ public class StartServer extends javax.swing.JFrame {
             public void run() {
                 String str = "";
                 while (true) {
-                   
+
                     try {
+
                         dout.writeUTF(str);
+
                     } catch (IOException ex) {
                         Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -96,6 +104,7 @@ public class StartServer extends javax.swing.JFrame {
 
             public void run() {
                 String str = "";
+                listAction = new ArrayList<>();
                 while (true) {
                     try {
                         str = din.readUTF();
@@ -103,11 +112,25 @@ public class StartServer extends javax.swing.JFrame {
                             textStatus.setText(textStatus.getText().trim() + "\n<" + name + " Disconnected>");
                             this.finalize();
                         } else {
-                            
-                            
+
                             textStatus.setText(textStatus.getText().trim() + "\n" + name + " :- " + str);
-                            
-                            
+                            listAction.add(str);
+                            int size = listAction.size();
+                            if (size > 0) {
+                                Object[][] action = new Object[size][4];
+                                for (int i = 0; i < size; i++) {
+
+                                    String[] arrOfStr = listAction.get(i).split(" ");
+                                    String[] date = listAction.get(i).split("at");
+                                    action[i][0] = i;
+                                    action[i][1] = i;
+                                    action[i][2] = date[1];
+                                    action[i][3] = arrOfStr[2];
+
+                                }
+                                jTable1.setModel(new DefaultTableModel(action, columnNames));
+                            }
+
                         }
                     } catch (IOException ex) {
                         Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
@@ -130,7 +153,7 @@ public class StartServer extends javax.swing.JFrame {
                     str = dtin.readUTF();
                     textStatus.setText(textStatus.getText() + "\n<" + str + " Connected >");
                     new StartSending(str, dtout, dtin).start();
-                    
+
                     new StartReceiving(str, dtout, dtin).start();
 
                 }
@@ -226,9 +249,17 @@ public class StartServer extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "IP", "Time", "Action"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -291,7 +322,7 @@ public class StartServer extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       /* WatchService watchservice;
+        /* WatchService watchservice;
         try {
             watchservice = FileSystems.getDefault().newWatchService();
             Path direct = Paths.get("C:\\");
@@ -312,20 +343,18 @@ public class StartServer extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-        JFileChooser chooser=new JFileChooser();
+        JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle("Select Directory");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
-        String fileName=JOptionPane.showInputDialog("Enter File Name (With Extension) ");
-        
-        
-        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
-                String str=chooser.getSelectedFile().getAbsolutePath();
+        String fileName = JOptionPane.showInputDialog("Enter File Name (With Extension) ");
+
+        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            String str = chooser.getSelectedFile().getAbsolutePath();
+        } else {
+            JOptionPane.showMessageDialog(null, "No Selection ");
         }
-            else {
-              JOptionPane.showMessageDialog(null,"No Selection ");
-              }
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -30,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -49,7 +50,8 @@ public class StartClient extends javax.swing.JFrame {
     static DataOutputStream dout;
     static String ip;
     static String publicIp;
-
+ 
+    
     public StartClient() {
         initComponents();
         this.getContentPane().setBackground(new Color(180, 223, 233));
@@ -79,8 +81,11 @@ public class StartClient extends javax.swing.JFrame {
                 
 //                OutputStream os = s.getOutputStream();
 //                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
+//                bw.write(ClientPage.name);
+//                bw.newLine();
+//                bw.flush();
                 
-                
+              
                 String str = "";
                 int i = 0;
                 //while (str != "Exit") {
@@ -105,13 +110,14 @@ public class StartClient extends javax.swing.JFrame {
         {
         for(WatchEvent<?> event : watchKey.pollEvents()){
             Path file = direct.resolve((Path) event.context());
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+     
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
             
          
             String dateString = dtf.format(now);
             sendMessage(file + " was " + event.kind() +" at "+ dateString );
+          
             
         }
         }
