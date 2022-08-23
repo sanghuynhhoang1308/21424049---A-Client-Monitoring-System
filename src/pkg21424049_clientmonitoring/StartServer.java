@@ -13,6 +13,14 @@ import java.io.*;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardWatchEventKinds;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -59,7 +67,7 @@ public class StartServer extends javax.swing.JFrame {
             public void run() {
                 String str = "";
                 while (true) {
-                    str = msg_area.getText();
+                   
                     try {
                         dout.writeUTF(str);
                     } catch (IOException ex) {
@@ -151,42 +159,21 @@ public class StartServer extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        msg_area = new javax.swing.JTextArea();
         msg_exit = new javax.swing.JButton();
         textStatus2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        fontSlider = new javax.swing.JSlider();
-        jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         textStatus = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        msg_area.setColumns(20);
-        msg_area.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
-        msg_area.setRows(5);
-        msg_area.setBorder(new javax.swing.border.MatteBorder(null));
-        msg_area.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        msg_area.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                msg_areaKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                msg_areaKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                msg_areaKeyTyped(evt);
-            }
-        });
-        jScrollPane2.setViewportView(msg_area);
 
         msg_exit.setBackground(new java.awt.Color(255, 102, 102));
         msg_exit.setText("Exit");
@@ -205,26 +192,6 @@ public class StartServer extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Server Notepad");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setText("Font Size");
-
-        fontSlider.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        fontSlider.setMaximum(80);
-        fontSlider.setMinimum(10);
-        fontSlider.setValue(20);
-        fontSlider.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                fontSliderPropertyChange(evt);
-            }
-        });
-
-        jButton1.setText("Set");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         textStatus.setEditable(false);
         textStatus.setColumns(20);
@@ -246,31 +213,39 @@ public class StartServer extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(1, 1, 1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addComponent(fontSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(1, 1, 1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -281,15 +256,14 @@ public class StartServer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fontSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -310,30 +284,43 @@ public class StartServer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_msg_exitActionPerformed
 
-    private void msg_areaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_msg_areaKeyTyped
-
-    }//GEN-LAST:event_msg_areaKeyTyped
-
-    private void msg_areaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_msg_areaKeyReleased
-
-    }//GEN-LAST:event_msg_areaKeyReleased
-
-    private void msg_areaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_msg_areaKeyPressed
-
-    }//GEN-LAST:event_msg_areaKeyPressed
-
-    private void fontSliderPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_fontSliderPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fontSliderPropertyChange
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        int size = fontSlider.getValue();
-        msg_area.setFont(new Font("Times New Roman", Font.PLAIN, size));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+       /* WatchService watchservice;
+        try {
+            watchservice = FileSystems.getDefault().newWatchService();
+            Path direct = Paths.get("C:\\");
+        WatchKey watchKey =direct.register(watchservice,
+                StandardWatchEventKinds.ENTRY_CREATE,
+                StandardWatchEventKinds.ENTRY_DELETE,
+                StandardWatchEventKinds.ENTRY_MODIFY
+                );
+        while(true)
+        {
+        for(WatchEvent<?> event : watchKey.pollEvents()){
+            System.out.println(event.kind());
+            Path file = direct.resolve((Path) event.context());
+            System.out.println(file + "was last modified at " + file.toFile().lastModified());
+            
+        }
+        }
+        } catch (IOException ex) {
+            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        JFileChooser chooser=new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("Select Directory");
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
+        String fileName=JOptionPane.showInputDialog("Enter File Name (With Extension) ");
+        
+        
+        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
+                String str=chooser.getSelectedFile().getAbsolutePath();
+        }
+            else {
+              JOptionPane.showMessageDialog(null,"No Selection ");
+              }
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -380,17 +367,14 @@ public class StartServer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JSlider fontSlider;
-    javax.swing.JButton jButton1;
     javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     javax.swing.JLabel jLabel1;
-    javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    javax.swing.JTextArea msg_area;
     javax.swing.JButton msg_exit;
     javax.swing.JTextArea textStatus;
     javax.swing.JLabel textStatus2;
