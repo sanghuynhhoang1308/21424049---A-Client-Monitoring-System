@@ -5,11 +5,17 @@
 package pkg21424049_clientmonitoring;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -20,6 +26,10 @@ import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -54,27 +64,7 @@ public class StartClient extends javax.swing.JFrame {
         }
 
         public void run() {
-            WatchService watchservice;
-        try {
-            watchservice = FileSystems.getDefault().newWatchService();
-            Path direct = Paths.get("C:\\");
-        WatchKey watchKey =direct.register(watchservice,
-                StandardWatchEventKinds.ENTRY_CREATE,
-                StandardWatchEventKinds.ENTRY_DELETE,
-                StandardWatchEventKinds.ENTRY_MODIFY
-                );
-        while(true)
-        {
-        for(WatchEvent<?> event : watchKey.pollEvents()){
-            System.out.println(event.kind());
-            Path file = direct.resolve((Path) event.context());
-            System.out.println(file + "was last modified at " + file.toFile().lastModified());
             
-        }
-        }
-        } catch (IOException ex) {
-            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
-        }
             try {
                 Socket s = new Socket(ip, ClientPage.portNumber);
                 //InetAddress a=new InetAddress(publicIp);
@@ -82,7 +72,15 @@ public class StartClient extends javax.swing.JFrame {
                 //Socket s = new Socket(InetAddress.getByName(publicIp), ClientPage.portNumber, InetAddress.getByName(ip), ClientPage.portNumber);
                 din = new DataInputStream(s.getInputStream());
                 dout = new DataOutputStream(s.getOutputStream());
+               
                 dout.writeUTF(ClientPage.name);
+//                InputStream is=s.getInputStream();
+//                BufferedReader br=new BufferedReader(new InputStreamReader(is));
+                
+//                OutputStream os = s.getOutputStream();
+//                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
+                
+                
                 String str = "";
                 int i = 0;
                 //while (str != "Exit") {
@@ -93,6 +91,33 @@ public class StartClient extends javax.swing.JFrame {
                 //   msg_area.setText(str);
                 //}
                 // }
+                WatchService watchservice;
+        try {
+            watchservice = FileSystems.getDefault().newWatchService();
+            Path direct = Paths.get("C:\\");
+        WatchKey watchKey =direct.register(watchservice,
+                
+                StandardWatchEventKinds.ENTRY_CREATE,
+                StandardWatchEventKinds.ENTRY_DELETE,
+                StandardWatchEventKinds.ENTRY_MODIFY
+                );
+        while(true)
+        {
+        for(WatchEvent<?> event : watchKey.pollEvents()){
+            Path file = direct.resolve((Path) event.context());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+            
+         
+            String dateString = dtf.format(now);
+            sendMessage(file + " was " + event.kind() +" at "+ dateString );
+            
+        }
+        }
+        } catch (IOException ex) {
+            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error in Connection", JOptionPane.ERROR_MESSAGE);
@@ -102,8 +127,18 @@ public class StartClient extends javax.swing.JFrame {
             }
         }
     }
-
-    /**
+    public void sendMessage(String text)
+    {
+        String str=text;
+        textQuery.setText(null);
+        try {
+            dout.writeUTF(str);
+            textStatus.setText(textStatus.getText()+"\n You :- "+str);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Could not send ");
+        }
+    }
+        /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.

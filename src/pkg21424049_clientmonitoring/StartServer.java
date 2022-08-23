@@ -103,7 +103,11 @@ public class StartServer extends javax.swing.JFrame {
                             textStatus.setText(textStatus.getText().trim() + "\n<" + name + " Disconnected>");
                             this.finalize();
                         } else {
+                            
+                            
                             textStatus.setText(textStatus.getText().trim() + "\n" + name + " :- " + str);
+                            
+                            
                         }
                     } catch (IOException ex) {
                         Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
@@ -126,6 +130,7 @@ public class StartServer extends javax.swing.JFrame {
                     str = dtin.readUTF();
                     textStatus.setText(textStatus.getText() + "\n<" + str + " Connected >");
                     new StartSending(str, dtout, dtin).start();
+                    
                     new StartReceiving(str, dtout, dtin).start();
 
                 }
