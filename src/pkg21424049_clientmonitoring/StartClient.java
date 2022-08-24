@@ -29,12 +29,14 @@ import java.nio.file.WatchService;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,8 +52,10 @@ public class StartClient extends javax.swing.JFrame {
     static DataOutputStream dout;
     static String ip;
     static String publicIp;
- 
-    
+   List<String> listClient;
+   List<String> listAction;
+    private final String[] columnNames = new String[]{
+        "STT", "IP", "Time", "Action"};
     public StartClient() {
         initComponents();
         this.getContentPane().setBackground(new Color(180, 223, 233));
@@ -74,20 +78,19 @@ public class StartClient extends javax.swing.JFrame {
                 //Socket s = new Socket(InetAddress.getByName(publicIp), ClientPage.portNumber, InetAddress.getByName(ip), ClientPage.portNumber);
                 din = new DataInputStream(s.getInputStream());
                 dout = new DataOutputStream(s.getOutputStream());
-               
+
                 dout.writeUTF(ClientPage.name);
 //                InputStream is=s.getInputStream();
 //                BufferedReader br=new BufferedReader(new InputStreamReader(is));
-                
+
 //                OutputStream os = s.getOutputStream();
 //                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
 //                bw.write(ClientPage.name);
 //                bw.newLine();
 //                bw.flush();
-                
-              
                 String str = "";
                 int i = 0;
+                 listAction = new ArrayList<>();
                 //while (str != "Exit") {
                 //str = din.readUTF();
                 //if (str == "Exit") {
@@ -97,33 +100,56 @@ public class StartClient extends javax.swing.JFrame {
                 //}
                 // }
                 WatchService watchservice;
-        try {
-            watchservice = FileSystems.getDefault().newWatchService();
-            Path direct = Paths.get("C:\\");
-        WatchKey watchKey =direct.register(watchservice,
-                
-                StandardWatchEventKinds.ENTRY_CREATE,
-                StandardWatchEventKinds.ENTRY_DELETE,
-                StandardWatchEventKinds.ENTRY_MODIFY
-                );
-        while(true)
-        {
-        for(WatchEvent<?> event : watchKey.pollEvents()){
-            Path file = direct.resolve((Path) event.context());
-     
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
-            
-         
-            String dateString = dtf.format(now);
-            sendMessage(file + " was " + event.kind() +" at "+ dateString );
-          
-            
-        }
-        }
-        } catch (IOException ex) {
-            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    watchservice = FileSystems.getDefault().newWatchService();
+                    Path direct = Paths.get("C:\\");
+
+                    WatchKey watchKey = direct.register(watchservice,
+                            StandardWatchEventKinds.ENTRY_CREATE,
+                            StandardWatchEventKinds.ENTRY_DELETE,
+                            StandardWatchEventKinds.ENTRY_MODIFY
+                    );
+
+                    while (true) {
+
+                        for (WatchEvent<?> event : watchKey.pollEvents()) {
+                            Path file = direct.resolve((Path) event.context());
+
+                            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                            LocalDateTime now = LocalDateTime.now();
+
+                            String dateString = dtf.format(now);
+                            String actionFile = file + ";" + event.kind() + ";" + dateString;
+                            
+                            sendMessage(actionFile);
+                            
+                            listAction.add(actionFile);
+                            
+                            int size = listAction.size();
+                            
+                            if (size > 0) {
+                                Object[][] action = new Object[size][4];
+                                for (int j = 0; j < size;j++) {
+
+                                   String[] arrOfStr = listAction.get(j).split(";");
+                                 
+                                    action[j][0] = j;
+                                    action[j][1] = arrOfStr[0];
+                                    action[j][2] = arrOfStr[2];
+                                    action[j][3] = arrOfStr[1].replaceAll("ENTRY_", "");
+
+                                }
+                                jTable1.setModel(new DefaultTableModel(action, columnNames));
+                            }
+                            
+                            
+                                
+                        }
+                        
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Error in Connection", JOptionPane.ERROR_MESSAGE);
@@ -133,18 +159,23 @@ public class StartClient extends javax.swing.JFrame {
             }
         }
     }
-    public void sendMessage(String text)
-    {
-        String str=text;
+
+    public void sendMessage(String text) {
+        String str = text;
+
         textQuery.setText(null);
         try {
             dout.writeUTF(str);
-            textStatus.setText(textStatus.getText()+"\n You :- "+str);
+            str = str.replaceAll(";", " ");
+
+            textStatus.setText(textStatus.getText() + "\n You :- " + str);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Could not send ");
-        }
+        } 
+    
     }
-        /**
+
+    /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.
@@ -167,7 +198,6 @@ public class StartClient extends javax.swing.JFrame {
         textStatus2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         msg_exit = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         textMainLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -178,6 +208,11 @@ public class StartClient extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         textQuery.setToolTipText("Write Query Here");
+        textQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textQueryActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Send Query");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +226,7 @@ public class StartClient extends javax.swing.JFrame {
         textStatus2.setText("Connected");
         textStatus2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
-        jButton3.setText("Browse");
+        jButton3.setText("Browse/ Save Log");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -203,13 +238,6 @@ public class StartClient extends javax.swing.JFrame {
         msg_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 msg_exitActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Button");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -233,9 +261,17 @@ public class StartClient extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "IP", "Time", "Action"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,26 +281,20 @@ public class StartClient extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                                .addComponent(textQuery, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(textQuery, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textMainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -278,21 +308,20 @@ public class StartClient extends javax.swing.JFrame {
                         .addGap(5, 5, 5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(textQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -320,12 +349,12 @@ public class StartClient extends javax.swing.JFrame {
                 FileWriter fout;
                 fout = new FileWriter(str + "/" + fileName);
                 PrintWriter p = new PrintWriter(fout);
-                //String words[]=msg_area.getText().split("\n");
+                String words[]=textStatus.getText().split("\n");
 
-                //for(String word : words){
-                // p.println(word);
-                // }
-                //p.close();
+                for(String word : words){
+                 p.println(word);
+                 }
+                p.close();
                 fout.close();
                 JOptionPane.showMessageDialog(null, "File Successfully written");
             } catch (FileNotFoundException ex) {
@@ -353,11 +382,9 @@ public class StartClient extends javax.swing.JFrame {
 
     }//GEN-LAST:event_msg_exitActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void textQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQueryActionPerformed
         // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_textQueryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,7 +417,7 @@ public class StartClient extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StartClient().go();
-                
+
             }
         });
     }
@@ -398,7 +425,6 @@ public class StartClient extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     static javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
