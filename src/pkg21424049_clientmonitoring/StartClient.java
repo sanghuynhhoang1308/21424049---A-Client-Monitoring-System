@@ -36,7 +36,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -52,10 +55,11 @@ public class StartClient extends javax.swing.JFrame {
     static DataOutputStream dout;
     static String ip;
     static String publicIp;
-   List<String> listClient;
-   List<String> listAction;
+    List<String> listClient;
+    List<String> listAction;
     private final String[] columnNames = new String[]{
         "STT", "IP", "Time", "Action"};
+
     public StartClient() {
         initComponents();
         this.getContentPane().setBackground(new Color(180, 223, 233));
@@ -70,7 +74,7 @@ public class StartClient extends javax.swing.JFrame {
         }
 
         public void run() {
-            
+
             try {
                 Socket s = new Socket(ip, ClientPage.portNumber);
                 //InetAddress a=new InetAddress(publicIp);
@@ -90,7 +94,7 @@ public class StartClient extends javax.swing.JFrame {
 //                bw.flush();
                 String str = "";
                 int i = 0;
-                 listAction = new ArrayList<>();
+                listAction = new ArrayList<>();
                 //while (str != "Exit") {
                 //str = din.readUTF();
                 //if (str == "Exit") {
@@ -120,19 +124,19 @@ public class StartClient extends javax.swing.JFrame {
 
                             String dateString = dtf.format(now);
                             String actionFile = file + ";" + event.kind() + ";" + dateString;
-                            
+
                             sendMessage(actionFile);
-                            
+
                             listAction.add(actionFile);
-                            
+
                             int size = listAction.size();
-                            
+
                             if (size > 0) {
                                 Object[][] action = new Object[size][4];
-                                for (int j = 0; j < size;j++) {
+                                for (int j = 0; j < size; j++) {
 
-                                   String[] arrOfStr = listAction.get(j).split(";");
-                                 
+                                    String[] arrOfStr = listAction.get(j).split(";");
+
                                     action[j][0] = j;
                                     action[j][1] = arrOfStr[0];
                                     action[j][2] = arrOfStr[2];
@@ -141,11 +145,9 @@ public class StartClient extends javax.swing.JFrame {
                                 }
                                 jTable1.setModel(new DefaultTableModel(action, columnNames));
                             }
-                            
-                            
-                                
+
                         }
-                        
+
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,8 +173,8 @@ public class StartClient extends javax.swing.JFrame {
             textStatus.setText(textStatus.getText() + "\n You :- " + str);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Could not send ");
-        } 
-    
+        }
+
     }
 
     /**
@@ -204,6 +206,7 @@ public class StartClient extends javax.swing.JFrame {
         textStatus = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -274,6 +277,14 @@ public class StartClient extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable1);
 
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Enter text here");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,13 +292,18 @@ public class StartClient extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3))
-                .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -308,14 +324,16 @@ public class StartClient extends javax.swing.JFrame {
                         .addGap(5, 5, 5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2)
                         .addGap(18, 18, 18)
                         .addComponent(textQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -349,11 +367,11 @@ public class StartClient extends javax.swing.JFrame {
                 FileWriter fout;
                 fout = new FileWriter(str + "/" + fileName);
                 PrintWriter p = new PrintWriter(fout);
-                String words[]=textStatus.getText().split("\n");
+                String words[] = textStatus.getText().split("\n");
 
-                for(String word : words){
-                 p.println(word);
-                 }
+                for (String word : words) {
+                    p.println(word);
+                }
                 p.close();
                 fout.close();
                 JOptionPane.showMessageDialog(null, "File Successfully written");
@@ -385,6 +403,14 @@ public class StartClient extends javax.swing.JFrame {
     private void textQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textQueryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textQueryActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel()));
+        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
+
+        jTable1.setRowSorter(sorter);
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,6 +455,7 @@ public class StartClient extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton msg_exit;
     private javax.swing.JLabel textMainLabel;
     private javax.swing.JTextField textQuery;
