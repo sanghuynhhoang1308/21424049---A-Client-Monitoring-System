@@ -38,6 +38,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.List;
+import java.util.Scanner;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -110,7 +111,11 @@ public class StartServer extends javax.swing.JFrame {
 
             public void run() {
                 String str = "";
-                listAction = new ArrayList<>();
+                if(listAction ==null)
+                {
+                     listAction = new ArrayList<>();
+                }
+               
                 while (true) {
                     try {
                         str = din.readUTF();
@@ -119,17 +124,18 @@ public class StartServer extends javax.swing.JFrame {
                             this.finalize();
                         } else {
                             listAction.add(str);
-                            str= str.replaceAll(";", " ");
-                                                               
+                             saveFileLogs(str);
+                            str = str.replaceAll(";", " ");
+                           
                             textStatus.setText(textStatus.getText().trim() + "\n" + name + " :- " + str);
-                            
+                                
                             int size = listAction.size();
                             if (size > 0) {
                                 Object[][] action = new Object[size][4];
                                 for (int i = 0; i < size; i++) {
 
                                     String[] arrOfStr = listAction.get(i).split(";");
-                                 
+
                                     action[i][0] = i;
                                     action[i][1] = arrOfStr[0];
                                     action[i][2] = arrOfStr[2];
@@ -144,7 +150,7 @@ public class StartServer extends javax.swing.JFrame {
                         Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (Throwable ex) {
 //                        JOptionPane.showMessageDialog(null, "Couldnt Stop the thread");
-                         JOptionPane.showMessageDialog(null, ex.getMessage());
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
                     }
 
                 }
@@ -391,8 +397,8 @@ public class StartServer extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //listAction.add(name);
-            //String[] options = {name};
-            JFileChooser chooser = new JFileChooser();
+        //String[] options = {name};
+        JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle("Select Directory to Save File");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -405,11 +411,11 @@ public class StartServer extends javax.swing.JFrame {
                 FileWriter fout;
                 fout = new FileWriter(str + "/" + fileName);
                 PrintWriter p = new PrintWriter(fout);
-                String words[]=textStatus.getText().split("\n");
+                String words[] = textStatus.getText().split("\n");
 
-                for(String word : words){
-                 p.println(word);
-                 }
+                for (String word : words) {
+                    p.println(word);
+                }
                 p.close();
                 fout.close();
                 JOptionPane.showMessageDialog(null, "File Successfully written");
@@ -421,73 +427,102 @@ public class StartServer extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "No Selection ");
         }
-           //textStatus.setText(textStatus.getText().trim() + "\n<" + name + " Disconnected>");
-           
+        //textStatus.setText(textStatus.getText().trim() + "\n<" + name + " Disconnected>");
+
     }//GEN-LAST:event_jButton3ActionPerformed
-    
-    
+
+    private void saveFileLogs(String data) {
+        try {
+            String str = data;
+            FileWriter fw;
+            try {
+                fw = new FileWriter("serverlogs.txt",true);
+
+            } catch (IOException exc) {
+//                JOptionPane.showMessageDialog(null, "Warning - cannot write");
+
+                return;
+            }
+            System.out.println("Loading...");
+             fw.write(str+ "\r\n");
+            
+            fw.close();
+//        
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+
+            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void readFileLogs() throws IOException  {
+        File myObj = new File("serverlogs.txt");
+        listAction=  new ArrayList<>();
+        boolean exists = myObj.exists();
+        if (exists == true) {
+            Scanner myReader = new Scanner(myObj);
+
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                listAction.add(data);
+                int size = listAction.size();
+                if (size > 0) {
+                    Object[][] action = new Object[size][4];
+                    for (int i = 0; i < size; i++) {
+
+                        String[] arrOfStr = listAction.get(i).split(";");   
+                       action[i][0] = i;
+                       action[i][1] = arrOfStr[0];
+                       action[i][2] = arrOfStr[2];
+                       action[i][3] = arrOfStr[1];
+
+                    }
+                    jTable1.setModel(new DefaultTableModel(action, columnNames));
+                }
+
+//              System.out.println(sv.toString());
+            }
+            myReader.close();
+        } else {
+            System.out.println("The file did't exist");
+            try ( FileWriter fw = new FileWriter("DanhSach.txt")) {
+                fw.write(0 + "\r\n");
+
+            }
+
+        }
+    }
+
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));
-        chooser.setDialogTitle("Select Directory to Open  File");
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        chooser.setAcceptAllFileFilterUsed(false);
+
+//      s
         //String fileName = JOptionPane.showInputDialog("Enter File Name (With Extension) ");
 
-        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            String str = chooser.getSelectedFile().getAbsolutePath();
-             String filePath = "C:\\sang\\test11.txt";
-        File file = new File(filePath);
-             try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            // get the first line
-            // get the columns name from the first line
-            // set columns name to the jtable model
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
-            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-            model.setColumnIdentifiers(columnsName);
-            
-            // get lines from txt file
-            Object[] tableLines = br.lines().toArray();
-            
-            // extratct data from lines
-            // set data to jtable model
-            for(int i = 0; i < tableLines.length; i++)
-            {
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split("/");
-                model.addRow(dataRow);
-                 //jTable1.setModel(new DefaultTableModel(tableLines, columnNames));
-            }
-            
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(StartClient.class.getName()).log(Level.SEVERE, null, ex);
+   
+            try {
+                readFileLogs();
             } catch (IOException ex) {
-                Logger.getLogger(StartClient.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "No Selection ");
-        }
-        
-        
-        
-       
+                Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+          
             
-       
+
+        
+            }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        
-         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel())); 
-    sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
 
-    jTable1.setRowSorter(sorter);
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel()));
+        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
+
+        jTable1.setRowSorter(sorter);
     }//GEN-LAST:event_jTextField1ActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
