@@ -56,7 +56,7 @@ public class StartServer extends javax.swing.JFrame {
     List<String> listAction;
     List<String> listClient;
     private final String[] columnNames = new String[]{
-        "STT", "IP", "Time", "Action"};
+        "STT", "Name Client", "Time", "Action"};
 
     public StartServer() {
         initComponents();
@@ -121,10 +121,10 @@ public class StartServer extends javax.swing.JFrame {
                         str = din.readUTF();
                         if (str.equals("Exit")) {
                             textStatus.setText(textStatus.getText().trim() + "\n<" + name + " Disconnected>");
-                            this.finalize();
+                            
                         } else {
                             listAction.add(str);
-                             saveFileLogs(str);
+                             saveFileLogs(name+";"+str);
                             str = str.replaceAll(";", " ");
                            
                             textStatus.setText(textStatus.getText().trim() + "\n" + name + " :- " + str);
@@ -137,9 +137,9 @@ public class StartServer extends javax.swing.JFrame {
                                     String[] arrOfStr = listAction.get(i).split(";");
 
                                     action[i][0] = i;
-                                    action[i][1] = arrOfStr[0];
+                                    action[i][1] = name;
                                     action[i][2] = arrOfStr[2];
-                                    action[i][3] = arrOfStr[1].replaceAll("ENTRY_", "");
+                                    action[i][3] = arrOfStr[0]+arrOfStr[1].replaceAll("ENTRY_", "");
 
                                 }
                                 jTable1.setModel(new DefaultTableModel(action, columnNames));
@@ -207,12 +207,12 @@ public class StartServer extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         textStatus = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -244,13 +244,6 @@ public class StartServer extends javax.swing.JFrame {
         textStatus.setRows(5);
         jScrollPane3.setViewportView(textStatus);
 
-        jButton2.setText("Browse Client");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButton3.setText("Save Log ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,7 +259,7 @@ public class StartServer extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "STT", "IP", "Time", "Action"
+                "STT", "Name Client", "Time", "Action"
             }
         ) {
             Class[] types = new Class [] {
@@ -294,6 +287,13 @@ public class StartServer extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Browse");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -302,24 +302,24 @@ public class StartServer extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -335,14 +335,15 @@ public class StartServer extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -355,44 +356,6 @@ public class StartServer extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_msg_exitActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        /* WatchService watchservice;
-        try {
-            watchservice = FileSystems.getDefault().newWatchService();
-            Path direct = Paths.get("C:\\");
-        WatchKey watchKey =direct.register(watchservice,
-                StandardWatchEventKinds.ENTRY_CREATE,
-                StandardWatchEventKinds.ENTRY_DELETE,
-                StandardWatchEventKinds.ENTRY_MODIFY
-                );
-        while(true)
-        {
-        for(WatchEvent<?> event : watchKey.pollEvents()){
-            System.out.println(event.kind());
-            Path file = direct.resolve((Path) event.context());
-            System.out.println(file + "was last modified at " + file.toFile().lastModified());
-            
-        }
-        }
-        } catch (IOException ex) {
-            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File("."));
-        chooser.setDialogTitle("Select Directory");
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        chooser.setAcceptAllFileFilterUsed(false);
-        String fileName = JOptionPane.showInputDialog("Enter File Name (With Extension) ");
-
-        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            String str = chooser.getSelectedFile().getAbsolutePath();
-        } else {
-            JOptionPane.showMessageDialog(null, "No Selection ");
-        }
-
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -474,11 +437,13 @@ public class StartServer extends javax.swing.JFrame {
                         String[] arrOfStr = listAction.get(i).split(";");   
                        action[i][0] = i;
                        action[i][1] = arrOfStr[0];
-                       action[i][2] = arrOfStr[2];
-                       action[i][3] = arrOfStr[1];
+                       action[i][2] = arrOfStr[3];
+                       action[i][3] = arrOfStr[1] + arrOfStr[2];
+                       
 
                     }
                     jTable1.setModel(new DefaultTableModel(action, columnNames));
+                    jTable1.setAutoCreateRowSorter(true);
                 }
 
 //              System.out.println(sv.toString());
@@ -506,10 +471,6 @@ public class StartServer extends javax.swing.JFrame {
                 readFileLogs();
             } catch (IOException ex) {
                 Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
-          
-            
-
-        
             }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -518,11 +479,33 @@ public class StartServer extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel()));
-        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
-
+        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText().toUpperCase()));
+        
         jTable1.setRowSorter(sorter);
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("Select Directory to change Path");
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
+        //String fileName = JOptionPane.showInputDialog("Enter File Name (With Extension) ");
+
+        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            String str = chooser.getSelectedFile().getAbsolutePath();
+            
+               
+                JOptionPane.showMessageDialog(null, "Change Path Successfully");
+           
+        } else {
+            JOptionPane.showMessageDialog(null, "Path Not Change ");
+        }
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -562,8 +545,8 @@ public class StartServer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    static javax.swing.JButton jButton4;
     javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

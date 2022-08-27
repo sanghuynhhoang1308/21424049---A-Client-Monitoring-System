@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardWatchEventKinds;
@@ -32,6 +34,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -58,7 +61,7 @@ public class StartClient extends javax.swing.JFrame {
     List<String> listClient;
     List<String> listAction;
     private final String[] columnNames = new String[]{
-        "STT", "IP", "Time", "Action"};
+        "STT", "Dict", "Time", "Action"};
 
     public StartClient() {
         initComponents();
@@ -77,21 +80,12 @@ public class StartClient extends javax.swing.JFrame {
 
             try {
                 Socket s = new Socket(ip, ClientPage.portNumber);
-                //InetAddress a=new InetAddress(publicIp);
 
-                //Socket s = new Socket(InetAddress.getByName(publicIp), ClientPage.portNumber, InetAddress.getByName(ip), ClientPage.portNumber);
                 din = new DataInputStream(s.getInputStream());
                 dout = new DataOutputStream(s.getOutputStream());
 
                 dout.writeUTF(ClientPage.name);
-//                InputStream is=s.getInputStream();
-//                BufferedReader br=new BufferedReader(new InputStreamReader(is));
 
-//                OutputStream os = s.getOutputStream();
-//                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
-//                bw.write(ClientPage.name);
-//                bw.newLine();
-//                bw.flush();
                 String str = "";
                 int i = 0;
                 listAction = new ArrayList<>();
@@ -106,8 +100,15 @@ public class StartClient extends javax.swing.JFrame {
                 WatchService watchservice;
                 try {
                     watchservice = FileSystems.getDefault().newWatchService();
-                    Path direct = Paths.get("C:\\");
 
+                //    Path direct = Paths.get("C:\\");
+                    Path direct =  Path.of("").toAbsolutePath();
+                   File thedir = new File(direct+"\\folderTracking");
+                   if(!thedir.exists())
+                   {
+                       thedir.mkdirs();
+                   }
+                    direct = Paths.get(direct+"\\folderTracking");
                     WatchKey watchKey = direct.register(watchservice,
                             StandardWatchEventKinds.ENTRY_CREATE,
                             StandardWatchEventKinds.ENTRY_DELETE,
@@ -127,8 +128,11 @@ public class StartClient extends javax.swing.JFrame {
 
                             sendMessage(actionFile);
 
+                            
                             listAction.add(actionFile);
-
+                            
+                            saveFileLogs(actionFile);
+                            
                             int size = listAction.size();
 
                             if (size > 0) {
@@ -144,6 +148,7 @@ public class StartClient extends javax.swing.JFrame {
 
                                 }
                                 jTable1.setModel(new DefaultTableModel(action, columnNames));
+                                jTable1.setAutoCreateRowSorter(true);
                             }
 
                         }
@@ -154,7 +159,8 @@ public class StartClient extends javax.swing.JFrame {
                 }
 
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Error in Connection", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Server is not online, Please Try again", "Error in Connection", JOptionPane.ERROR_MESSAGE);
+
                 c.setVisible(false);
                 new ClientPage().setVisible(true);
                 System.out.println(e.toString());
@@ -163,6 +169,11 @@ public class StartClient extends javax.swing.JFrame {
     }
 
     public void sendMessage(String text) {
+
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
         String str = text;
 
         textQuery.setText(null);
@@ -187,6 +198,7 @@ public class StartClient extends javax.swing.JFrame {
         ip = ClientPage.ip;
         publicIp = "localhost";
         textMainLabel.setText(ClientPage.name);
+
         new HandleClient(this).start();
 
     }
@@ -207,6 +219,7 @@ public class StartClient extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -264,7 +277,7 @@ public class StartClient extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "STT", "IP", "Time", "Action"
+                "STT", "Dict", "Time", "Action"
             }
         ) {
             Class[] types = new Class [] {
@@ -285,25 +298,30 @@ public class StartClient extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Load Log");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                                .addGap(29, 29, 29)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(textStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                        .addGap(64, 64, 64)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -331,15 +349,17 @@ public class StartClient extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(jTextField1)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(msg_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -407,10 +427,86 @@ public class StartClient extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) jTable1.getModel()));
-        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
+        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText().toUpperCase()));
 
         jTable1.setRowSorter(sorter);
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void saveFileLogs(String data) {
+        try {
+            String str = data;
+            FileWriter fw;
+            try {
+                fw = new FileWriter("clientlogs.txt", true);
+                
+
+            } catch (IOException exc) {
+//                JOptionPane.showMessageDialog(null, "Warning - cannot write");
+
+                return;
+            }
+            System.out.println("Loading...");
+           fw.write(str + "\r\n");
+
+            fw.close();
+//        
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+
+            Logger.getLogger(StartClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void readFileLogs() throws IOException {
+        File myObj = new File("clientlogs.txt");
+        listAction = new ArrayList<>();
+        boolean exists = myObj.exists();
+        if (exists == true) {
+            Scanner myReader = new Scanner(myObj);
+
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                listAction.add(data);
+                int size = listAction.size();
+                if (size > 0) {
+                    Object[][] action = new Object[size][4];
+                    for (int i = 0; i < size; i++) {
+
+                        String[] arrOfStr = listAction.get(i).split(";");
+                        action[i][0] = i;
+                        action[i][1] = arrOfStr[0];
+                        action[i][2] = arrOfStr[2];
+                        action[i][3] = arrOfStr[1];
+
+                    }
+                    jTable1.setModel(new DefaultTableModel(action, columnNames));
+                    jTable1.setAutoCreateRowSorter(true);
+                }
+
+//              System.out.println(sv.toString());
+            }
+            myReader.close();
+        } else {
+            System.out.println("The file did't exist");
+            try ( FileWriter fw = new FileWriter("DanhSach.txt")) {
+                fw.write(0 + "\r\n");
+
+            }
+
+        }
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        //      s
+        //String fileName = JOptionPane.showInputDialog("Enter File Name (With Extension) ");
+        try {
+            readFileLogs();
+        } catch (IOException ex) {
+            Logger.getLogger(StartServer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,6 +545,7 @@ public class StartClient extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     static javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

@@ -1,3 +1,375 @@
-C:\New folder (2);ENTRY_CREATE;26/08/2022 16:32:38
-C:\New folder (2);ENTRY_DELETE;26/08/2022 16:33:04
-C:\New folder;ENTRY_DELETE;26/08/2022 16:33:08
+test01;C:\New folder;ENTRY_CREATE;27/08/2022 14:19:21
+test02;C:\New folder;ENTRY_CREATE;27/08/2022 14:19:21
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:21
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:21
+sang;.\build;ENTRY_DELETE;27/08/2022 14:31:22
+sang;.\build;ENTRY_CREATE;27/08/2022 14:31:22
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:22
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:22
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:23
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:23
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:23
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:23
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:24
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:24
+sang;.\dist;ENTRY_CREATE;27/08/2022 14:31:24
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:24
+sang;.\dist;ENTRY_MODIFY;27/08/2022 14:31:24
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:25
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:25
+sang;.\build;ENTRY_MODIFY;27/08/2022 14:31:25
+sang;.\.gitignore3588876972832751370tmp;ENTRY_CREATE;27/08/2022 14:31:25
+sang;.\.gitignore3588876972832751370tmp;ENTRY_MODIFY;27/08/2022 14:31:25
+sang;.\.gitignore;ENTRY_DELETE;27/08/2022 14:31:25
+sang;.\.gitignore1661585484584;ENTRY_CREATE;27/08/2022 14:31:25
+sang;.\.gitignore1661585484584;ENTRY_MODIFY;27/08/2022 14:31:26
+sang;.\.gitignore3588876972832751370tmp;ENTRY_DELETE;27/08/2022 14:31:26
+sang;.\.gitignore;ENTRY_CREATE;27/08/2022 14:31:26
+sang;.\.gitignore;ENTRY_MODIFY;27/08/2022 14:31:26
+sang;.\.gitignore1661585484584;ENTRY_DELETE;27/08/2022 14:31:26
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:26
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:26
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:27
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:28
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:29
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:30
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:31
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:32
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:33
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:33
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:33
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:33
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:33
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:34
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+sang;.\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+sang;.\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:31:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\New folder (2);ENTRY_CREATE;27/08/2022 14:34:34
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:34
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:35
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:36
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:37
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:38
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:38
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:38
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:38
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:38
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:39
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:40
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:40
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:40
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:40
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:40
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:41
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:42
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:42
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:42
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:42
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:42
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:43
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:44
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:45
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:46
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:47
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:48
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:49
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:50
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:51
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:52
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:53
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:54
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:55
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:56
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:57
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:58
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:34:59
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:00
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:01
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:02
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:03
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:04
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:05
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:06
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:07
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:08
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:09
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:10
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:11
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:12
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:14
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:15
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:16
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:17
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:18
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:19
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:19
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\clientlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:19
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\serverlogs.txt;ENTRY_MODIFY;27/08/2022 14:35:19
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\folderTracking\New Text Document.txt;ENTRY_CREATE;27/08/2022 14:51:13
+test;C:\Users\Huynh Hoang Sang\OneDrive - VNU-HCMUS\Documents\NetBeansProjects\21424049_ClientMonitoring\folderTracking\New Text Document.txt;ENTRY_MODIFY;27/08/2022 14:51:15
